@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{ base :: layout(~{::title} , ~{::section} ) }">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Edit Note</title>
+</head>
+<body>
+	<section>
+		<div class="container mt-4">
+			<h4 class="text-center">Edit Note</h4>
+
+			<form th:action="@{/user/updateNotes}" method="post" th:object="${note}">
+				<input type="hidden" th:field="*{id}" />
+
+				<div class="mb-3">
+					<label class="form-label">Title</label>
+					<input type="text" class="form-control" th:field="*{title}" required />
+				</div>
+
+				<div class="mb-3">
+					<label class="form-label">Description</label>
+					<textarea class="form-control" th:field="*{description}" rows="5" required></textarea>
+				</div>
+
+				<div class="text-center">
+					<button type="submit" class="btn btn-success">Update</button>
+				</div>
+			</form>
+		</div>
+	</section>
+</body>
+</html>

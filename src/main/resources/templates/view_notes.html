@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{ base :: layout(~{::title} , ~{::section} ) }">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>View Notes</title>
+</head>
+<body>
+	<section>
+		<div class="container-fluid p-2">
+			<h4 class="text-center">View All Notes</h4>
+
+			<div class="row">
+				<div class="col-md-10 offset-md-1 mt-2">
+
+					<!-- Loop through all notes -->
+					<div th:if="${#lists.isEmpty(notes)}" class="alert alert-info text-center mt-4">
+					    No notes available.
+					</div>
+
+					<div th:each="note : ${notes}" class="card mt-3">
+						<div class="card-body">
+							
+							<p><strong>Title:</strong> <span th:text="${note.title}">Note Title</span></p>
+							<p><strong>Content:</strong> <span th:text="${note.description}">Note Content</span></p>
+						
+							<p><strong>Created At: </strong><span th:text="${#temporals.format(note.date, 'dd-MM-yyyy')}">08-05-2023</span></p>
+
+							<div class="text-center">
+								<a th:href="@{'/user/editNotes/' + ${note.id}}" class="btn btn-primary btn-sm">Edit</a>
+								<a th:href="@{'/user/deleteNotes/' + ${note.id}}" class="btn btn-danger btn-sm">Delete</a>
+							</div>
+						</div>
+					</div>
+					<!-- End Loop -->
+
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

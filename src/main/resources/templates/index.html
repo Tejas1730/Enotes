@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{ base :: layout(~{::title} , ~{::section} ) }">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Welcome to eNotes</title>
+</head>
+<body>
+	<section>
+		<div class="container-fluid p-4 bg-light">
+			<div class="text-center mb-5">
+				<h1 class="display-4 fw-bold">Welcome to eNotes</h1>
+				<p class="lead">Your personal space to quickly jot down ideas, reminders, and important thoughts.</p>
+			</div>
+
+			<div class="row text-center">
+				<div class="col-md-4 mb-4">
+					<h4 class="mt-3">📝 Quick Note-Taking</h4>
+					<p>Save your thoughts in seconds. Perfect for reminders, ideas, or anything important.</p>
+				</div>
+				<div class="col-md-4 mb-4">
+					<h4 class="mt-3">📅 Stay Organized</h4>
+					<p>All your notes in one place, neatly categorized by date and time.</p>
+				</div>
+				<div class="col-md-4 mb-4">
+					<h4 class="mt-3">✏️ Edit & Delete Anytime</h4>
+					<p>Update or remove notes whenever you want with just one click.</p>
+				</div>
+			</div>
+
+			<div class="text-center mt-4">
+				<a href="/user/addNotes" class="btn btn-primary btn-lg">Start Taking Notes</a>
+			</div>
+
+			<hr class="my-5">
+
+			<div class="text-center">
+				<blockquote class="blockquote">
+					<p class="mb-0 fst-italic">"The faintest ink is better than the strongest memory."</p>
+					<footer class="blockquote-footer mt-2">Chinese Proverb</footer>
+				</blockquote>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
