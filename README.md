@@ -38,12 +38,14 @@ This is a Spring Boot-based application designed to manage user profiles and e-n
    cd enotes-app
 
 2. **Configure the Database Update the application.properties file with your database configuration**
+    ```bash
     spring.datasource.url=jdbc:mysql://localhost:3306/enotes
     spring.datasource.username=root
     spring.datasource.password=yourpassword
     spring.jpa.hibernate.ddl-auto=update
 
 3. **Run the Application**
+    ```bash
     mvn spring-boot:run
 
 
